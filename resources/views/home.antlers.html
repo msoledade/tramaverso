@@ -1,0 +1,18 @@
+<article class="max-w-6xl mx-auto px-3">
+    <header class="mx-auto max-w-xl text-center content">
+        <h1 class="mb-4 text-6xl">Contos semanais</h1>
+    </header>
+    {{ taxonomy:coletanea }}
+        <h2 class="mt-12 text-4xl font-bold">
+            <a href="{{ url }}" class="hover:text-hot-pink">
+                {{ title }}
+            </a>
+        </h2>
+        <p class="text-lg mb-3 mt-2">{{ intro }}</p>
+        <section class="grid grid-cols-2 gap-2">
+            {{ entries }}
+                {{ partial:contos/card :url="url" :hero_image="hero_image" :title="title" }}
+            {{ /entries }}
+        </section>
+    {{ /taxonomy:coletanea }}
+</article>

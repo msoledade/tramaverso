@@ -1,0 +1,11 @@
+title: Settings
+data:
+  site_name: Tramaverso
+  personality: formal
+  show_signup: false
+  social:
+    -
+      id: aV7CIliI
+      name: Email
+      url: 'mailto:marcosoledadejr@gmail.com'
+      icon: site/social-icons/email.svg

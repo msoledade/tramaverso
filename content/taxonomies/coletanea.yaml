@@ -1,0 +1,9 @@
+title: Coletânea
+preview_targets:
+  -
+    label: Coletânea
+    url: '{permalink}'
+    refresh: true
+template: coletanea/show
+term_template: coletanea/show
+layout: layout

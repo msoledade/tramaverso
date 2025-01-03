@@ -1,0 +1,91 @@
+title: Conto
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: hero_image
+            field:
+              mode: grid
+              container: assets
+              restrict: true
+              max_files: 1
+              type: assets
+              display: 'Hero Image'
+          -
+            handle: main_content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - strikethrough
+                - code
+                - codeblock
+              container: assets
+              reading_time: true
+              type: bard
+              display: 'Main Content'
+              sets:
+                code_block:
+                  display: 'Code Block'
+                  fields:
+                    -
+                      handle: code
+                      field:
+                        theme: material
+                        mode: php
+                        indent_type: tabs
+                        indent_size: 4
+                        key_map: default
+                        line_numbers: true
+                        line_wrapping: true
+                        type: code
+                        listable: hidden
+                        display: Code
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - required
+                - 'new \Statamic\Rules\UniqueEntryValue({collection},{id},{site})'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+          -
+            handle: author
+            field:
+              max_items: 1
+              type: users
+              listable: true
+              display: Author
+              default: current

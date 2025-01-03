@@ -1,0 +1,11 @@
+<main class="max-w-6xl mx-auto px-3">
+    <header class="mx-auto max-w-xl text-center content">
+        <h1 class="mb-4 text-6xl">{{title}}</h1>
+        <p class="text-lg mb-6 mt-2">{{ intro }}</p>
+    </header>
+    <section class="grid grid-cols-2 gap-2">
+        {{ entries }}
+            {{ partial:contos/card :url="url" :hero_image="hero_image" :title="title" }}
+        {{ /entries }}
+    </section>  
+</main>
